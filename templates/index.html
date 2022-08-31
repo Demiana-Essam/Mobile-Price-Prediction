@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Mobile Price Classification</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="../static/css/style.css">
+	</head>
+
+	<body>
+		<div class="parent">
+			<div class="left_child">
+				
+				<h1>The Predicted Result</h1>
+				<h2 id="result" style="color: #dfbd4f"><br>{{price_range}}</br></h2>
+			</div>
+			
+			
+			<div class="right_child">
+				<form action="/predict" method="GET">
+					<h1 style="font-size: 25px; text-align: center;"><br><br> <br><br><br><br>Enter The Mobile Features</h1>
+					<br><br>
+					<div class="input_container">
+
+						<div class="input_field">
+							<label class="form-group">
+								<input type="number" class="form-control"  name='battery_power' id="t1">
+								<p>Battery Power</p>
+							</label>
+						</div>
+	
+						<div class="input_field">
+							<label class="form-group">
+								<input type="number" class="form-control"  name='int_memory' id="t2">
+								<p>Internal Memory in Gb</p>
+							</label>
+						</div>
+						
+						<div class="input_field">
+							<label class="form-group">
+								<input type="number" class="form-control"  name='mobile_wt' id="t3">
+								<p>Weight of mobile</p>
+							</label>
+						</div>
+	
+						<div class="input_field">
+							<label class="form-group">
+								<input type="number" class="form-control"  name='pc' id="t4">
+								<p >Primary Camera mega pixels</p>
+							</label>
+						</div>
+	
+						<div class="input_field">
+							<label class="form-group">
+								<input type="number" class="form-control"  name='px_height' id="t5">
+								<p >Pixel Resolution Height</p>
+							</label>
+						</div>
+	
+						<div class="input_field">
+							<label class="form-group">
+								<input type="number" class="form-control"  name='px_width' id="t6">
+								<p >Pixel Resolution Width</p>
+							</label>
+						</div>
+						
+						<div class="input_field">
+							<label class="form-group">
+								<input type="number" class="form-control"  name='ram' id="t7">
+								<p>RAM </p>
+							</label>
+						</div>				
+	
+						<div class="input_field">
+							<label class="form-group">
+								<input type="number" class="form-control"  name='sc_w' step="any" id="t8">
+								<p>Screen Width in cm</p>
+							</label>
+						</div>
+					</div>
+
+					<div style="text-align: center;">
+						<div style="float: left;width: 50%;">
+							<label class="form-group">
+								<span for="">Touch Screen</span>
+								<select name='touch_screen'>
+									<option value="Yes">Yes</option>
+									<option value="No">No</option>		
+								</select>
+							</label>
+						</div>
+						<div style="float: right; width: 50%;">
+							<button value="Check Empty" onclick="return ValidateTextBox()">Predict
+								<i class="zmdi zmdi-arrow-right"></i>
+							</button>
+						</div>
+					</div>			
+					
+				</form>
+			</div>
+		</div>
+
+		<script type="text/javascript">
+			
+		</script>
+		
+	</body>
+</html>
